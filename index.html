@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pakistan Movement 1945–46</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --cream: #F8F4EE;
+    --warm-white: #FDFAF6;
+    --gold: #B8955A;
+    --gold-light: #D4AF7A;
+    --dark: #1A1612;
+    --dark-mid: #2E2820;
+    --text: #3A3228;
+    --text-light: #7A6F65;
+    --green: #2D4A2D;
+    --green-light: #4A7A4A;
+    --border: rgba(184,149,90,0.25);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; width: 100%;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 60px;
+    background: rgba(253,250,246,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.4s;
+  }
+  nav .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--dark);
+    text-decoration: none;
+  }
+  nav .logo span { color: var(--gold); }
+  nav ul {
+    display: flex; gap: 36px; list-style: none;
+  }
+  nav ul li a {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+  nav ul li a::after {
+    content: '';
+    position: absolute; bottom: -3px; left: 0;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+  nav ul li a:hover { color: var(--gold); }
+  nav ul li a:hover::after { width: 100%; }
+
+  /* ─── HERO ─── */
+  .hero {
+    height: 100vh;
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/1200px-Flag_of_Pakistan.svg.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.08) sepia(0.5);
+    transform: scale(1.05);
+    animation: slowZoom 20s ease-in-out infinite alternate;
+  }
+  /* Overlay pattern */
+  .hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(26,22,18,0.85) 0%, rgba(45,74,45,0.4) 50%, rgba(26,22,18,0.9) 100%);
+  }
+  @keyframes slowZoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.12); }
+  }
+  .hero-bg-img {
+    position: absolute; inset: 0;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Jinnah_1945.jpg/800px-Jinnah_1945.jpg');
+    background-size: cover;
+    background-position: center top;
+    opacity: 0.18;
+    mix-blend-mode: luminosity;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center;
+    padding: 0 40px;
+    max-width: 900px;
+    animation: heroFade 1.4s ease forwards;
+    opacity: 0;
+  }
+  @keyframes heroFade {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: ''; width: 40px; height: 1px;
+    background: var(--gold-light); opacity: 0.6;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 900;
+    color: #FDFAF6;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .hero-title .italic { font-style: italic; color: var(--gold-light); }
+  .hero-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(248,244,238,0.55);
+    letter-spacing: 0.12em;
+    margin-bottom: 36px;
+  }
+  .hero-desc {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.92rem;
+    line-height: 2;
+    color: rgba(248,244,238,0.7);
+    max-width: 560px;
+    margin: 0 auto 44px;
+    letter-spacing: 0.04em;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--dark);
+    background: var(--gold);
+    padding: 16px 36px;
+    text-decoration: none;
+    transition: all 0.35s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 12px 100%);
+  }
+  .hero-cta:hover {
+    background: var(--gold-light);
+    gap: 20px;
+  }
+  .hero-scroll {
+    position: absolute; bottom: 36px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: rgba(248,244,238,0.45);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .hero-scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+  @keyframes scrollLine {
+    0%, 100% { transform: scaleY(1); opacity: 1; }
+    50% { transform: scaleY(0.5); opacity: 0.4; }
+  }
+
+  /* ─── INTRO STRIP ─── */
+  .intro-strip {
+    background: var(--dark);
+    padding: 28px 60px;
+    display: flex; align-items: center; justify-content: space-between; gap: 40px;
+    overflow: hidden;
+  }
+  .intro-strip-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(248,244,238,0.65);
+    letter-spacing: 0.06em;
+    flex: 1;
+    border-left: 2px solid var(--gold);
+    padding-left: 20px;
+  }
+  .intro-strip-stats {
+    display: flex; gap: 60px;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(248,244,238,0.4);
+    margin-top: 6px;
+    display: block;
+  }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 100px 0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+
+  .section-label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .section-label::before {
+    content: ''; width: 30px; height: 1px; background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 20px;
+  }
+  .section-title .italic { font-style: italic; color: var(--gold); }
+  .section-body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--text-light);
+    max-width: 580px;
+  }
+
+  /* ─── ABOUT / INTRO ─── */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .about-img-wrap {
+    position: relative;
+  }
+  .about-img-wrap img {
+    width: 100%; height: 520px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .about-img-accent {
+    position: absolute;
+    top: -20px; left: -20px;
+    width: 180px; height: 180px;
+    border: 1px solid var(--gold);
+    opacity: 0.35;
+    z-index: -1;
+  }
+  .about-img-year {
+    position: absolute;
+    bottom: -30px; right: -30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    font-weight: 900;
+    color: var(--dark);
+    opacity: 0.06;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .about-quote {
+    margin-top: 36px;
+    padding: 24px 28px;
+    border-left: 3px solid var(--gold);
+    background: var(--cream);
+  }
+  .about-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .about-quote cite {
+    display: block; margin-top: 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* ─── TIMELINE EVENTS ─── */
+  .events-bg { background: var(--cream); }
+  .events-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    margin-top: 60px;
+  }
+  .event-card {
+    background: var(--warm-white);
+    padding: 44px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+    cursor: default;
+  }
+  .event-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .event-card:hover::before { transform: scaleX(1); }
+  .event-card:hover { background: var(--dark); }
+  .event-card:hover .event-num,
+  .event-card:hover .event-title,
+  .event-card:hover .event-body { color: rgba(253,250,246,0.9); }
+  .event-card:hover .event-num { color: var(--gold-light); }
+  .event-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(26,22,18,0.07);
+    line-height: 1;
+    margin-bottom: 20px;
+    transition: color 0.4s;
+  }
+  .event-year-tag {
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(184,149,90,0.12);
+    padding: 5px 12px;
+    margin-bottom: 16px;
+  }
+  .event-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 14px;
+    line-height: 1.3;
+    transition: color 0.4s;
+  }
+  .event-body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.87rem;
+    line-height: 1.85;
+    color: var(--text-light);
+    transition: color 0.4s;
+  }
+
+  /* ─── FULL-WIDTH IMAGE BREAK ─── */
+  .img-break {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+  }
+  .img-break img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    filter: brightness(0.6) sepia(0.3);
+    transform: scale(1.02);
+    transition: transform 8s ease;
+  }
+  .img-break:hover img { transform: scale(1.06); }
+  .img-break-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(26,22,18,0.8) 0%, rgba(26,22,18,0.2) 60%, transparent 100%);
+    display: flex; align-items: center;
+    padding: 0 100px;
+  }
+  .img-break-text {
+    max-width: 520px;
+  }
+  .img-break-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #FDFAF6;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .img-break-text h3 em { font-style: italic; color: var(--gold-light); }
+  .img-break-text p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: rgba(253,250,246,0.7);
+  }
+
+  /* ─── JINNAH SECTION ─── */
+  .jinnah-section {
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+  .jinnah-section::before {
+    content: 'QUAID';
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+    font-size: 20vw;
+    font-weight: 900;
+    color: rgba(184,149,90,0.04);
+    right: -4vw; top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .jinnah-grid {
+    display: grid; grid-template-columns: 420px 1fr; gap: 80px; align-items: start;
+  }
+  .jinnah-img-wrap {
+    position: relative;
+  }
+  .jinnah-img-wrap img {
+    width: 100%; height: 560px;
+    object-fit: cover; object-position: center top;
+    filter: grayscale(1) contrast(1.1);
+  }
+  .jinnah-img-wrap::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(26,22,18,0.7) 0%, transparent 50%);
+  }
+  .jinnah-img-caption {
+    position: absolute; bottom: 20px; left: 20px;
+    z-index: 2;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: rgba(253,250,246,0.6);
+    letter-spacing: 0.1em;
+  }
+  .jinnah-content { padding-top: 20px; }
+  .jinnah-content .section-title { color: #FDFAF6; }
+  .jinnah-content .section-body { color: rgba(248,244,238,0.6); max-width: 100%; }
+  .jinnah-ideas {
+    margin-top: 40px;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .idea-item {
+    display: flex; align-items: flex-start; gap: 20px;
+    padding: 20px 24px;
+    border: 1px solid rgba(184,149,90,0.2);
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .idea-item:hover {
+    border-color: var(--gold);
+    background: rgba(184,149,90,0.05);
+  }
+  .idea-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: rgba(184,149,90,0.15);
+    border: 1px solid rgba(184,149,90,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 1.1rem;
+  }
+  .idea-text h4 {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 0.82rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(248,244,238,0.9);
+    margin-bottom: 6px;
+  }
+  .idea-text p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: rgba(248,244,238,0.5);
+  }
+
+  /* ─── CABINET MISSION ─── */
+  .cabinet-section { background: var(--warm-white); }
+  .cabinet-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+    margin-top: 60px;
+  }
+  .cabinet-img {
+    width: 100%; height: 420px;
+    object-fit: cover;
+    object-position: center;
+    filter: sepia(0.2);
+  }
+  .cabinet-points { display: flex; flex-direction: column; gap: 0; }
+  .cabinet-point {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; gap: 24px; align-items: flex-start;
+  }
+  .cabinet-point:first-child { border-top: 1px solid var(--border); }
+  .cp-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 36px;
+  }
+  .cp-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+  .cp-content p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: var(--text-light);
+  }
+
+  /* ─── DIRECT ACTION ─── */
+  .direct-section {
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+  .direct-bg {
+    position: absolute; inset: 0;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Calcutta_1946.jpg/1200px-Calcutta_1946.jpg') center/cover no-repeat;
+    opacity: 0.08;
+    filter: grayscale(1);
+  }
+  .direct-content {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .direct-date {
+    display: flex; flex-direction: column;
+    align-items: flex-start;
+  }
+  .direct-date-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(5rem, 12vw, 9rem);
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 0.85;
+    opacity: 0.9;
+  }
+  .direct-date-month {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(248,244,238,0.4);
+    margin-top: 12px;
+  }
+  .direct-date-event {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: rgba(253,250,246,0.7);
+    margin-top: 20px;
+    line-height: 1.5;
+    max-width: 260px;
+  }
+  .direct-info .section-title { color: #FDFAF6; }
+  .direct-info .section-body { color: rgba(248,244,238,0.55); max-width: 100%; }
+  .impact-badges {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    margin-top: 32px;
+  }
+  .impact-badge {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    border: 1px solid rgba(184,149,90,0.35);
+    padding: 8px 18px;
+  }
+
+  /* ─── TWO NATION THEORY ─── */
+  .tnt-section { background: var(--cream); }
+  .tnt-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    margin-top: 60px;
+  }
+  .tnt-block {
+    padding: 60px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tnt-block:first-child {
+    background: var(--dark);
+  }
+  .tnt-block:last-child {
+    background: var(--green);
+  }
+  .tnt-block-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(253,250,246,0.4);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .tnt-block-label::after { content: ''; flex: 1; height: 1px; background: currentColor; opacity: 0.3; }
+  .tnt-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FDFAF6;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+  .tnt-block h3 em { font-style: italic; color: var(--gold-light); }
+  .tnt-block p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.88rem;
+    line-height: 1.9;
+    color: rgba(253,250,246,0.6);
+  }
+  .tnt-list {
+    margin-top: 24px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .tnt-list li {
+    display: flex; align-items: center; gap: 14px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: rgba(253,250,246,0.7);
+    list-style: none;
+  }
+  .tnt-list li::before {
+    content: '';
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* ─── PERSONALITIES TABLE ─── */
+  .personalities-section { background: var(--warm-white); }
+  .pers-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    margin-top: 60px;
+  }
+  .pers-card {
+    background: var(--cream);
+    padding: 40px 32px;
+    text-align: center;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+  .pers-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.4s;
+  }
+  .pers-card:hover::after { transform: scaleX(1); }
+  .pers-card:hover { background: var(--dark); }
+  .pers-card:hover .pers-name,
+  .pers-card:hover .pers-role { color: rgba(253,250,246,0.9); }
+  .pers-avatar {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: rgba(184,149,90,0.12);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold);
+    overflow: hidden;
+  }
+  .pers-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(1); }
+  .pers-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+    transition: color 0.4s;
+  }
+  .pers-role {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    color: var(--text-light);
+    text-transform: uppercase;
+    transition: color 0.4s;
+  }
+
+  /* ─── CONCLUSION ─── */
+  .conclusion-section {
+    background: var(--dark);
+    text-align: center;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .conclusion-section::before {
+    content: '1947';
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 30vw;
+    font-weight: 900;
+    color: rgba(184,149,90,0.03);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .conclusion-section .section-label { justify-content: center; }
+  .conclusion-section .section-title { color: #FDFAF6; margin: 0 auto 24px; }
+  .conclusion-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(253,250,246,0.55);
+    max-width: 680px;
+    margin: 0 auto 40px;
+    line-height: 1.75;
+    letter-spacing: 0.03em;
+  }
+  .conclusion-divider {
+    width: 60px; height: 1px;
+    background: var(--gold);
+    margin: 0 auto 40px;
+  }
+  .conclusion-body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 2;
+    color: rgba(248,244,238,0.45);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #111;
+    padding: 36px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(184,149,90,0.15);
+  }
+  footer .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: rgba(253,250,246,0.7);
+    letter-spacing: 0.06em;
+  }
+  footer .footer-logo span { color: var(--gold); }
+  footer .footer-copy {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: rgba(253,250,246,0.3);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    nav ul { display: none; }
+    .container { padding: 0 24px; }
+    .about-grid, .jinnah-grid, .cabinet-layout, .direct-content, .tnt-grid { grid-template-columns: 1fr; gap: 40px; }
+    .events-grid, .pers-grid { grid-template-columns: 1fr; }
+    .intro-strip { flex-direction: column; gap: 20px; padding: 24px; }
+    .intro-strip-stats { justify-content: center; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+    .img-break-overlay { padding: 0 28px; }
+    .direct-date-num { font-size: 5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Pakistan <span>Movement</span></a>
+  <ul>
+    <li><a href="#intro">Introduction</a></li>
+    <li><a href="#events">Key Events</a></li>
+    <li><a href="#jinnah">Jinnah</a></li>
+    <li><a href="#cabinet">Cabinet Mission</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-img"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Historical Account</div>
+    <h1 class="hero-title">Pakistan<br><span class="italic">Movement</span></h1>
+    <div class="hero-year">1945 — 1946</div>
+    <p class="hero-desc">The decisive years that shaped the destiny of South Asia — a nation's struggle for identity, sovereignty, and a homeland.</p>
+    <a href="#intro" class="hero-cta">Explore the History ›</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- INTRO STRIP -->
+<div class="intro-strip">
+  <div class="intro-strip-text">
+    "The years 1945–46 were the most critical phase of the Pakistan Movement — Muslims proved they were a distinct nation deserving a separate homeland."
+  </div>
+  <div class="intro-strip-stats">
+    <div class="stat">
+      <span class="stat-num">90%</span>
+      <span class="stat-label">Muslim Seats Won</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">1946</span>
+      <span class="stat-label">Cabinet Mission</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">1947</span>
+      <span class="stat-label">Pakistan Created</span>
+    </div>
+  </div>
+</div>
+
+<!-- INTRODUCTION / BACKGROUND -->
+<section id="intro">
+  <div class="container">
+    <div class="about-grid fade-in">
+      <div class="about-img-wrap">
+        <img src="https://pid.gov.pk/pid_beta/admin/uploads/profile/1.jpg" alt="Muhammad Ali Jinnah 1945" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Muhammad_Ali_Jinnah.jpg/800px-Muhammad_Ali_Jinnah.jpg'">
+        <div class="about-img-accent"></div>
+        <div class="about-img-year">1945</div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">Background</div>
+        <h2 class="section-title">The Road to <span class="italic">Partition</span></h2>
+        <p class="section-body">After World War II, the British government was weakened and sought to resolve the Indian question swiftly. The central debate: would India remain united, or would Muslims receive a separate homeland?</p>
+        <p class="section-body" style="margin-top:20px;">Muhammad Ali Jinnah led the All India Muslim League with conviction, while Congress, under Nehru and Gandhi, claimed to represent all of India's people. The stage was set for a historic confrontation.</p>
+        <p class="section-body" style="margin-top:20px;">The 1940 Lahore Resolution had already demanded separate Muslim states. By 1945, the movement gained unstoppable momentum through elections, conferences, and mass mobilization.</p>
+        <div class="about-quote">
+          <p>"Hindus and Muslims belong to two different religious philosophies, social customs, and literary traditions. They neither intermarry nor interdine together."</p>
+          <cite>— Muhammad Ali Jinnah</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY EVENTS -->
+<section id="events" class="events-bg">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Chronology</div>
+      <h2 class="section-title">Key <span class="italic">Events</span></h2>
+    </div>
+    <div class="events-grid fade-in">
+      <div class="event-card">
+        <div class="event-num">01</div>
+        <div class="event-year-tag">June 1945</div>
+        <h3 class="event-title">Simla Conference</h3>
+        <p class="event-body">Called by Lord Wavell to form a new government. Congress claimed to represent all Indians; the Muslim League asserted its sole representation of Muslims. The conference failed — but Jinnah emerged stronger as the undisputed voice of Muslims.</p>
+      </div>
+      <div class="event-card">
+        <div class="event-num">02</div>
+        <div class="event-year-tag">1945–46</div>
+        <h3 class="event-title">Central Elections</h3>
+        <p class="event-body">The Muslim League swept nearly all Muslim seats in the Central Legislative Assembly. The results made clear: Muslims stood behind the League and its demand for Pakistan. Congress dominated Hindu-majority constituencies.</p>
+      </div>
+      <div class="event-card">
+        <div class="event-num">03</div>
+        <div class="event-year-tag">1946</div>
+        <h3 class="event-title">Provincial Elections</h3>
+        <p class="event-body">An even greater triumph — the League won approximately 90% of Muslim seats across Punjab, Sindh, Bengal, and NWFP. The Two Nation Theory transformed from a political claim into a democratic mandate.</p>
+      </div>
+      <div class="event-card">
+        <div class="event-num">04</div>
+        <div class="event-year-tag">1946</div>
+        <h3 class="event-title">Cabinet Mission</h3>
+        <p class="event-body">Three British ministers proposed keeping India united under a weak center. The League initially accepted. Congress's rejection — and Nehru's threatening statements — destroyed the plan and deepened Muslim resolve for partition.</p>
+      </div>
+      <div class="event-card">
+        <div class="event-num">05</div>
+        <div class="event-year-tag">16 Aug 1946</div>
+        <h3 class="event-title">Direct Action Day</h3>
+        <p class="event-body">Jinnah announced Direct Action Day to demonstrate Muslim determination. Calcutta erupted in violence; thousands perished. The tragedy spread to Bihar, Noakhali, and Punjab — making coexistence in a unified India appear impossible.</p>
+      </div>
+      <div class="event-card">
+        <div class="event-num">06</div>
+        <div class="event-year-tag">Late 1946</div>
+        <h3 class="event-title">Interim Government</h3>
+        <p class="event-body">Congress joined first; the Muslim League followed reluctantly. Deep conflicts paralyzed the government, proving that Congress and the League could not govern together. Partition became the only viable path forward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BREAK -->
+<div class="img-break">
+  <img src="https://www.shutterstock.com/image-vector/pakistan-map-flag-260nw-597449093.jpg" alt="All India Muslim League Session" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/1200px-Flag_of_Pakistan.svg.png'">
+  <div class="img-break-overlay">
+    <div class="img-break-text">
+      <h3>A Nation <em>Awakens</em></h3>
+      <p>Students, women, religious scholars, workers, and farmers — all classes united behind the Muslim League. The Pakistan Movement transformed from an elite political struggle into a mass uprising of an entire people.</p>
+    </div>
+  </div>
+</div>
+
+<!-- JINNAH -->
+<section id="jinnah" class="jinnah-section">
+  <div class="container">
+    <div class="jinnah-grid fade-in">
+      <div class="jinnah-img-wrap">
+        <img src="https://media.istockphoto.com/id/583797994/photo/pakistan-pinned-on-the-map-with-flag.jpg?s=612x612&w=0&k=20&c=OBNvbo_Ok8sPWVUcrLq8pfIPhyOtfwLE03ydjsBHLZw=" alt="Muhammad Ali Jinnah">
+        <div class="jinnah-img-caption">Muhammad Ali Jinnah — Quaid-e-Azam</div>
+      </div>
+      <div class="jinnah-content">
+        <div class="section-label" style="color:var(--gold)">Leadership</div>
+        <h2 class="section-title">Muhammad Ali <span class="italic">Jinnah</span></h2>
+        <p class="section-body">His vision was unwavering: Hindus and Muslims were two separate nations, distinct in religion, culture, tradition, and social systems. Through constitutional struggle, masterful negotiations, and electoral triumph, Jinnah became the architect of a new nation.</p>
+        <div class="jinnah-ideas">
+          <div class="idea-item">
+            <div class="idea-icon">I</div>
+            <div class="idea-text">
+              <h4>Two Nation Theory</h4>
+              <p>Hindus and Muslims were fundamentally distinct peoples who could not coexist within a single democratic state dominated by a Hindu majority.</p>
+            </div>
+          </div>
+          <div class="idea-item">
+            <div class="idea-icon">II</div>
+            <div class="idea-text">
+              <h4>Constitutional Strategy</h4>
+              <p>Jinnah pursued his goals through legal channels — elections, negotiations, and parliamentary pressure — earning global respect for his methods.</p>
+            </div>
+          </div>
+          <div class="idea-item">
+            <div class="idea-icon">III</div>
+            <div class="idea-text">
+              <h4>Mass Mobilization</h4>
+              <p>Under his leadership, the Muslim League transformed into a mass movement, uniting diverse Muslim communities across the subcontinent behind one demand: Pakistan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CABINET MISSION -->
+<section id="cabinet" class="cabinet-section">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">1946</div>
+      <h2 class="section-title">The Cabinet <span class="italic">Mission</span></h2>
+      <p class="section-body">Britain's final attempt to keep India united — three ministers, one plan, and a failure that sealed the fate of partition.</p>
+    </div>
+    <div class="cabinet-layout fade-in">
+      <div>
+        <img class="cabinet-img" src="https://historypak.com/wp-content/uploads/2012/08/Cabnet-mission.jpg" alt="Cabinet Mission 1946" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Jinnah_1945.jpg/800px-Jinnah_1945.jpg'">
+        <div style="margin-top:24px; padding:28px; background:var(--cream); border-left:3px solid var(--gold);">
+          <h4 style="font-family:'Playfair Display',serif; font-size:1rem; color:var(--dark); margin-bottom:10px;">Mission Members</h4>
+          <p style="font-family:'Jost',sans-serif; font-size:0.85rem; font-weight:300; color:var(--text-light); line-height:1.8;">Lord Pethick-Lawrence · Stafford Cripps · A.V. Alexander</p>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--dark); margin-bottom:24px; font-weight:600;">Main Proposals</h3>
+        <div class="cabinet-points">
+          <div class="cabinet-point">
+            <span class="cp-num">1</span>
+            <div class="cp-content">
+              <h4>United India</h4>
+              <p>India would remain a single unified country — the central demand the Muslim League ultimately rejected in favor of full partition.</p>
+            </div>
+          </div>
+          <div class="cabinet-point">
+            <span class="cp-num">2</span>
+            <div class="cp-content">
+              <h4>Provincial Groupings</h4>
+              <p>Provinces would be arranged into Muslim-majority and Hindu-majority groups with significant regional autonomy — giving Muslims effective control over their territories.</p>
+            </div>
+          </div>
+          <div class="cabinet-point">
+            <span class="cp-num">3</span>
+            <div class="cp-content">
+              <h4>Weak Central Government</h4>
+              <p>The center would only control Defence, Foreign Affairs, and Communications — all other powers would rest with provinces and groups.</p>
+            </div>
+          </div>
+          <div class="cabinet-point">
+            <span class="cp-num">4</span>
+            <div class="cp-content">
+              <h4>Congress Rejection</h4>
+              <p>Nehru's statements signaled Congress would override the plan once in power. Muslim fears grew — the plan collapsed, and with it, any hope of a united India.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECT ACTION DAY -->
+<section class="direct-section">
+  <div class="direct-bg"></div>
+  <div class="container">
+    <div class="direct-content fade-in">
+      <div class="direct-date">
+        <div class="direct-date-num">16</div>
+        <div class="direct-date-month">August · 1946</div>
+        <div class="direct-date-event">"Direct Action Day" — A turning point drenched in tragedy</div>
+      </div>
+      <div class="direct-info">
+        <div class="section-label" style="color:var(--gold)">Crisis Point</div>
+        <h2 class="section-title">Direct Action <span class="italic">Day</span></h2>
+        <p class="section-body">Jinnah announced Direct Action Day to demonstrate Muslim resolve. What followed shook the subcontinent: devastating riots in Calcutta left thousands dead. The violence spread to Bihar, Noakhali, and Punjab — shattering any remaining illusion of Hindu-Muslim unity under one flag.</p>
+        <div class="impact-badges">
+          <span class="impact-badge">Calcutta Riots</span>
+          <span class="impact-badge">Bihar Violence</span>
+          <span class="impact-badge">Noakhali Crisis</span>
+          <span class="impact-badge">Punjab Unrest</span>
+          <span class="impact-badge">Partition Inevitable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TWO NATION THEORY -->
+<section class="tnt-section">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Ideology</div>
+      <h2 class="section-title">The Two Nation <span class="italic">Theory</span></h2>
+      <p class="section-body">The philosophical and political foundation upon which Pakistan was built — a theory validated by the events of 1945–46.</p>
+    </div>
+    <div class="tnt-grid fade-in" style="margin-top:60px;">
+      <div class="tnt-block">
+        <div class="tnt-block-label">The Theory</div>
+        <h3>Hindus & Muslims: <em>Two Nations</em></h3>
+        <p>The Two Nation Theory held that religious identity was not merely personal but civilizational — determining culture, law, tradition, and social life. Hindus and Muslims formed two distinct peoples incapable of living under a single democratic government.</p>
+        <ul class="tnt-list">
+          <li>Different religions and world views</li>
+          <li>Distinct cultural and literary traditions</li>
+          <li>Separate social customs and legal systems</li>
+          <li>Incompatible political aspirations</li>
+        </ul>
+      </div>
+      <div class="tnt-block">
+        <div class="tnt-block-label">The Proof</div>
+        <h3>Validated by <em>Elections</em></h3>
+        <p>The 1945–46 elections transformed the Two Nation Theory from philosophical argument into democratic proof. Muslims voted overwhelmingly for the League and for Pakistan — giving the theory a mandate no British official could ignore.</p>
+        <ul class="tnt-list">
+          <li>Muslim League won ~90% of Muslim seats</li>
+          <li>Clear Hindu–Muslim voting divide emerged</li>
+          <li>Mass public support across all classes</li>
+          <li>British recognized partition was necessary</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONALITIES -->
+<section class="personalities-section">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Figures of History</div>
+      <h2 class="section-title">Key <span class="italic">Personalities</span></h2>
+    </div>
+    <div class="pers-grid fade-in">
+      <div class="pers-card">
+        <div class="pers-avatar">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Muhammad_Ali_Jinnah.jpg/400px-Muhammad_Ali_Jinnah.jpg" alt="Jinnah" onerror="this.style.display='none'; this.parentElement.textContent='J'">
+        </div>
+        <div class="pers-name">Muhammad Ali Jinnah</div>
+        <div class="pers-role">Quaid-e-Azam · Leader, Muslim League</div>
+      </div>
+      <div class="pers-card">
+        <div class="pers-avatar">L</div>
+        <div class="pers-name">Liaquat Ali Khan</div>
+        <div class="pers-role">Close Associate of Jinnah</div>
+      </div>
+      <div class="pers-card">
+        <div class="pers-avatar">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Nehru_1948.jpg/400px-Nehru_1948.jpg" alt="Nehru" onerror="this.style.display='none'; this.parentElement.textContent='N'">
+        </div>
+        <div class="pers-name">Jawaharlal Nehru</div>
+        <div class="pers-role">Congress Leader · India</div>
+      </div>
+      <div class="pers-card">
+        <div class="pers-avatar">G</div>
+        <div class="pers-name">Mahatma Gandhi</div>
+        <div class="pers-role">Congress Leader · Nonviolent Resistance</div>
+      </div>
+      <div class="pers-card">
+        <div class="pers-avatar">W</div>
+        <div class="pers-name">Lord Wavell</div>
+        <div class="pers-role">British Viceroy of India</div>
+      </div>
+      <div class="pers-card">
+        <div class="pers-avatar">A</div>
+        <div class="pers-name">Clement Attlee</div>
+        <div class="pers-role">British Prime Minister</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCLUSION -->
+<section class="conclusion-section">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label" style="color:var(--gold); justify-content:center;">Legacy</div>
+      <h2 class="section-title" style="text-align:center;">The Road to <span class="italic">Pakistan</span></h2>
+      <div class="conclusion-divider"></div>
+      <div class="conclusion-quote">
+        "The events of 1945–46 changed the history of South Asia forever. The political struggle, leadership of Muhammad Ali Jinnah, and the success of the Muslim League paved the way for the creation of Pakistan."
+      </div>
+      <p class="conclusion-body">The years 1945–46 were the decisive years of the Pakistan Movement. Muslim League achieved major election victories. Muslims proved their separate identity. The Cabinet Mission failed. Hindu-Muslim tensions intensified. And the demand for Pakistan became unstoppable — leading to the birth of a nation on 14 August 1947.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Pakistan <span>Movement</span> — 1945–1946</div>
+  <div class="footer-copy">A Historical Documentation of the Road to Independence</div>
+</footer>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Sticky nav
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 60) {
+      nav.style.padding = '14px 60px';
+      nav.style.boxShadow = '0 4px 30px rgba(26,22,18,0.12)';
+    } else {
+      nav.style.padding = '20px 60px';
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+</body>
+</html>
